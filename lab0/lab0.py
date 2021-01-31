@@ -23,7 +23,7 @@
 #   3. Python v3.0
 # Fill in your answer in the next line of code ("1", "2", or "3"):
 
-ANSWER_1 = 'fill-me-in'
+ANSWER_1 = '2'
 
 
 # Section 2: Programming warmup _____________________________________________
@@ -31,7 +31,10 @@ ANSWER_1 = 'fill-me-in'
 # Problem 2.1: Warm-Up Stretch
 
 def cube(x):
-    raise NotImplementedError
+    try:
+        return x*x*x
+    except:
+        pass
 
 def factorial(x):
     raise NotImplementedError
