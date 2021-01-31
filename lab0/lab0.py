@@ -70,9 +70,10 @@ def depth(expr):
 # Problem 2.3: Tree indexing
 
 def tree_ref(tree, index):
-    raise NotImplementedError
+    for i in index:
+        tree = tree[i]
 
-
+    return tree
 # Section 3: Symbolic algebra
 
 # Your solution to this problem doesn't go in this file.
