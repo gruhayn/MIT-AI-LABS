@@ -34,19 +34,37 @@ def cube(x):
     try:
         return x*x*x
     except:
-        pass
+        raise Exception, "problem occured"
 
 def factorial(x):
-    raise NotImplementedError
+    if not isinstance(x,int):
+        raise Exception, "factorial: input must  be integer"
+    elif x<0:
+        raise Exception, "factorial: input must not be negative"
+    if x==0:
+        return 1
+    return x*factorial(x-1)
+        
 
 def count_pattern(pattern, lst):
-    raise NotImplementedError
-
+    str_pattern = ''.join(str(e) for e in pattern)
+    str_lst = ''.join(str(e) for e in lst)
+    
+    return str_lst.count(str_pattern)
+            
 
 # Problem 2.2: Expression depth
 
 def depth(expr):
-    raise NotImplementedError
+    total = 0
+    if isinstance(expr, (list, tuple)):
+        total = 1
+    
+    for i in expr:
+        if isinstance(i, (list, tuple)):
+            total = max(total , 1 + depth(i))
+
+    return total
 
 
 # Problem 2.3: Tree indexing
